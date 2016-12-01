@@ -6,7 +6,7 @@
 #    By: alao <alao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 15:45:38 by alao              #+#    #+#              #
-#    Updated: 2016/12/01 18:48:26 by alao             ###   ########.fr        #
+#    Updated: 2016/12/01 19:47:21 by alao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = wolf3d
 N_INC = wolf.h
 
 N_SRCS =	wolf.c				\
+			welcome.c			\
 			parser.c			\
 			init.c				\
 			hooker.c			\

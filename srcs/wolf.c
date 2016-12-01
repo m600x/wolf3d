@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 09:10:09 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 18:51:11 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/01 20:03:10 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,9 @@ static int		wolf_time(t_wolf *w)
 ** LOOP : Main looper.
 */
 
-static int		wolf_loop(t_wolf *w)
+int				wolf_loop(t_wolf *w)
 {
 	wolf_engine(w);
-	system(AUD_OPN);
 	mlx_hook(w->mlx.win, 17, (1L << 17), &wolf_exit, w);
 	mlx_hook(w->mlx.win, 2, (1L << 0), &wolf_key, w);
 	mlx_loop_hook(w->mlx.mlx, &wolf_time, w);
@@ -84,6 +83,8 @@ int				main(int argc, char *argv[])
 	wolf_parser(&w);
 	wolf_init(&w, 1);
 	w.mlx.win = mlx_new_window(w.mlx.mlx, WIN_X, WIN_Y, "Dora 3D");
+	system(AUD_OPN);
+	wolf_welcome(&w);
 	wolf_loop(&w);
 	return (0);
 }

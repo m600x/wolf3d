@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 18:04:09 by alao              #+#    #+#             */
-/*   Updated: 2016/11/26 12:43:20 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/01 19:58:08 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,10 @@
 # define MV_RR		14
 # define MV_SPD		257
 # define TEXTURED	17
-
 # define K_ESC		53
 # define K_ENTER	36
 # define K_SPACE	49
-# define K_1		18
-# define K_2		19
-# define K_3		20
-# define K_4		21
-
-# define M_CLICK_L	1
-# define M_CLICK_R	2
-# define M_CLICK_M	3
-# define M_SCROL_P	4
-# define M_SCROL_N	5
+# define K_UP		126
+# define K_DOWN		125
 
 #endif

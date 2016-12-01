@@ -1,0 +1,15 @@
+os:
+    - osx
+
+language:
+    - c
+
+sudo:
+    - required
+
+before_install:
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install valgrind ; fi
+
+script:
+    - make ; make ; make re ; make clean ; make ; make fclean ; make

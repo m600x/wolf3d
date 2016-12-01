@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 18:56:21 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 17:48:24 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/01 20:03:32 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void					wolf_error(char *reason);
 int						wolf_exit(t_wolf *w);
 void					wolf_parser(t_wolf *w);
 void					wolf_init(t_wolf *w, int first);
+void					wolf_welcome(t_wolf *w);
+int						wolf_loop(t_wolf *w);
 int						wolf_key(int key, t_wolf *w);
 void					wolf_items_pick(t_wolf *w);
 void					wolf_sound(t_wolf *w);

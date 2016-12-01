@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 13:28:55 by alao              #+#    #+#             */
-/*   Updated: 2016/11/29 21:13:08 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/01 20:06:01 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@
 # define LV5_SKY		"Resources/images/level/5_sky.xpm"
 # define LV5_GND		"Resources/images/level/5_gnd.xpm"
 
+# define IMG_WELCOME	"Resources/images/gui/welcome.xpm"
+# define IMG_WELCOME_N	"Resources/images/gui/welcome_new.xpm"
+# define IMG_WELCOME_Q	"Resources/images/gui/welcome_quit.xpm"
 # define IMG_GUI_FOOT	"Resources/images/gui/footer.xpm"
 # define IMG_GUI_N0		"Resources/images/gui/numbers/0.xpm"
 # define IMG_GUI_N1		"Resources/images/gui/numbers/1.xpm"

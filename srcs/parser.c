@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 09:14:35 by alao              #+#    #+#             */
-/*   Updated: 2016/11/24 14:19:56 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/01 19:16:07 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ static void		wolf_filler(t_wolf *w, int x, int y)
 	{
 		tmp = ft_strtrim(line);
 		splitted = ft_strsplit(tmp, ' ');
-		line ? ft_memdel((void *)&line) : (0);
-		tmp ? ft_memdel((void *)&tmp) : (0);
 		x = 0;
 		while (x < w->map_x && splitted[x])
 		{
 			w->map[y][x].wall = ft_atoi(splitted[x]);
 			x++;
 		}
+		line ? ft_memdel((void *)&line) : (0);
+		tmp ? ft_memdel((void *)&tmp) : (0);
 		splitted ? ft_sstrdel(splitted) : (0);
 		y++;
 	}
@@ -99,12 +99,12 @@ void			wolf_parser(t_wolf *w)
 	{
 		tmp = ft_strtrim(line);
 		splitted = ft_strsplit(tmp, ' ');
-		line ? ft_memdel((void *)&line) : (0);
 		ft_isnumber(tmp) ? wolf_error(ERR_NOT_NUM) : (0);
-		tmp ? ft_memdel((void *)&tmp) : (0);
 		(w->map_x == 0) ? w->map_x = ft_sstrlen(splitted) : (0);
 		if (w->map_x != ft_sstrlen(splitted))
 			wolf_error(ERR_NOT_EQU);
+		tmp ? ft_memdel((void *)&tmp) : (0);
+		line ? ft_memdel((void *)&line) : (0);
 		splitted ? ft_sstrdel(splitted) : (0);
 		w->map_y++;
 	}

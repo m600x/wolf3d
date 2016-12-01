@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_gen.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/01 20:16:40 by alao              #+#    #+#             */
+/*   Updated: 2016/12/01 20:16:57 by alao             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 Compile command:
 gcc map_gen.c -Lminilibx -lmlx -Llibft -lft -framework OpenGL -framework AppKit -o mapgen
@@ -52,7 +64,6 @@ int print(void *mlx, void *img, int tx, int ty)
 		while (x < tx)
 		{
 			clr = get_color(img, x, y);
-//			printf("clr [%d]\n", clr);
 			(clr == WALL) ? ft_putchar('1') : (0);
 			(clr == EMPTY) ? ft_putchar('0') : (0);
 			(clr == PLAYER) ? ft_putchar('2') : (0);
@@ -76,7 +87,6 @@ int load(void *mlx, char *path)
 	int ty;
 
 	img = mlx_xpm_file_to_image(mlx, path, &tx, &ty);
-//	printf("Image [%s] X [%d] Y [%d]\n", path, tx, ty);
 	print(mlx, img, tx, ty);
 	return (0);
 }
@@ -89,6 +99,5 @@ int main(int argc, char **argv)
 		return (-1);
 	mlx = mlx_init();
 	load(mlx, argv[1]);
-//	printf("T\n");
 	return (0);
 }
