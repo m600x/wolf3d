@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 13:28:55 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 20:06:01 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/02 14:25:42 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 **            - 1 wall.
 **            - 2 player.
 **            - 3 heroin.
-**            - 4 exit;
+**            - 4 exit.
 */
 
-# define XPM_MAP_1		"maps/m1.wolf"
-# define XPM_MAP_2		"maps/m2.wolf"
-# define XPM_MAP_3		"maps/m3.wolf"
-# define XPM_MAP_4		"maps/m4.wolf"
-# define XPM_MAP_5		"maps/m5.wolf"
+# define XPM_MAP_1		"Resources/maps/m1.wolf"
+# define XPM_MAP_2		"Resources/maps/m2.wolf"
+# define XPM_MAP_3		"Resources/maps/m3.wolf"
+# define XPM_MAP_4		"Resources/maps/m4.wolf"
+# define XPM_MAP_5		"Resources/maps/m5.wolf"
 
 /*
 ** IMAGES
@@ -43,9 +43,21 @@
 # define LV1_WALL		"Resources/images/level/1_wall.xpm"
 # define LV1_GND		"Resources/images/level/1_gnd.xpm"
 
-# define LV5_WALL		"Resources/images/level/5_wall.xpm"
-# define LV5_SKY		"Resources/images/level/5_sky.xpm"
-# define LV5_GND		"Resources/images/level/5_gnd.xpm"
+# define LV2_SKY		"Resources/images/level/2_sky.xpm"
+# define LV2_WALL		"Resources/images/level/2_wall.xpm"
+# define LV2_GND		"Resources/images/level/2_gnd.xpm"
+
+# define LV3_SKY		"Resources/images/level/3_sky.xpm"
+# define LV3_WALL		"Resources/images/level/3_wall.xpm"
+# define LV3_GND		"Resources/images/level/3_gnd.xpm"
+
+# define LV4_SKY		"Resources/images/level/4_sky.xpm"
+# define LV4_WALL		"Resources/images/level/4_wall.xpm"
+# define LV4_GND		"Resources/images/level/4_gnd.xpm"
+
+# define LV5_WALL		"Resources/images/level/2_wall.xpm"
+# define LV5_SKY		"Resources/images/level/3_sky.xpm"
+# define LV5_GND		"Resources/images/level/4_gnd.xpm"
 
 # define IMG_WELCOME	"Resources/images/gui/welcome.xpm"
 # define IMG_WELCOME_N	"Resources/images/gui/welcome_new.xpm"
@@ -61,9 +73,12 @@
 # define IMG_GUI_N7		"Resources/images/gui/numbers/7.xpm"
 # define IMG_GUI_N8		"Resources/images/gui/numbers/8.xpm"
 # define IMG_GUI_N9		"Resources/images/gui/numbers/9.xpm"
-# define IMG_HEAD_L		"Resources/images/player/headl.xpm"
-# define IMG_HEAD_M		"Resources/images/player/headm.xpm"
-# define IMG_HEAD_R		"Resources/images/player/headr.xpm"
+# define IMG_HEAD_L		"Resources/images/player/head_l.xpm"
+# define IMG_HEAD_M		"Resources/images/player/head_m.xpm"
+# define IMG_HEAD_R		"Resources/images/player/head_r.xpm"
+# define IMG_HEAD_LH	"Resources/images/player/head_lh.xpm"
+# define IMG_HEAD_MH	"Resources/images/player/head_mh.xpm"
+# define IMG_HEAD_RH	"Resources/images/player/head_rh.xpm"
 # define IMG_HEROIN_0	"Resources/images/player/heroin0.xpm"
 # define IMG_HEROIN_1	"Resources/images/player/heroin1.xpm"
 # define IMG_HEROIN_2	"Resources/images/player/heroin2.xpm"

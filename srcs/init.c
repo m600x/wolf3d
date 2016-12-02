@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 14:18:46 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 18:28:07 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/02 13:35:17 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ static void			init_variable(t_wolf *w)
 	w->p.step = 0;
 	w->p.junkie = 0;
 	w->s = NULL;
-
 }
 
 /*
@@ -98,7 +97,7 @@ static int			init_player(t_wolf *w, int x, int y, int tag)
 		{
 			if (w->map[y][x].wall == 2)
 			{
-				w->map[y][x].wall  = 0;
+				w->map[y][x].wall = 0;
 				w->p.pos_x = x + 0.5;
 				w->p.pos_y = y + 0.5;
 				tag = 0;

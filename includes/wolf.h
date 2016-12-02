@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 18:56:21 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 20:03:32 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/02 14:01:34 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@
 # include <pthread.h>
 # include <unistd.h>
 # include "fcntl.h"
-
-#include <stdio.h>
-#include <time.h>
+# include <time.h>
 
 # define MLX_LEFT		0
 # define MLX_CENTER		1

@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 20:16:40 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 20:16:57 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/02 14:23:25 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int				get_color(void *img, int x, int y)
 	return (color);
 }
 
-int print(void *mlx, void *img, int tx, int ty)
+int				print(void *mlx, void *img, int tx, int ty)
 {
 	int x = 0;
 	int y = 0;
@@ -79,21 +79,20 @@ int print(void *mlx, void *img, int tx, int ty)
 	return (0);
 }
 
-
-int load(void *mlx, char *path)
+int				load(void *mlx, char *path)
 {
-	void *img;
-	int tx;
-	int ty;
+	void		*img;
+	int			tx;
+	int			ty;
 
 	img = mlx_xpm_file_to_image(mlx, path, &tx, &ty);
 	print(mlx, img, tx, ty);
 	return (0);
 }
 
-int main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
-	void *mlx;
+	void		*mlx;
 
 	if (argc != 2)
 		return (-1);

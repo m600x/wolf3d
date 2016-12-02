@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 10:23:57 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 18:20:43 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/02 14:06:37 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct			s_pxl
 {
 	int					wall;
 	int					color;
-	char				orientation;
 }						t_pxl;
 
 typedef struct			s_mlx

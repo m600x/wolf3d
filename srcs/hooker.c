@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:41:21 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 18:27:11 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/02 13:35:36 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,6 @@ int					wolf_key(int key, t_wolf *w)
 	int				render;
 
 	render = 0;
-
 	(key == QUIT) ? wolf_exit(w) : (0);
 	(key == MV_FW || key == MV_BW) ? render = wolf_move(w, key) : (0);
 	(key == MV_SL || key == MV_SR) ? render = wolf_move(w, key) : (0);

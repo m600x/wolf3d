@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 13:32:26 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 18:40:26 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/02 13:36:00 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ void			wolf_render_skyground(t_wolf *w, int x, int y)
 		wolf_mlx_pixel(w, x, y, clr);
 		y++;
 	}
-	(void)x;
-	(void)clr;
-
 }
 
 /*

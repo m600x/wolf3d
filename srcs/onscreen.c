@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 18:46:11 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 19:12:26 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/02 14:12:39 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ void				wolf_value(t_wolf *w, int off_x, int off_y, int value)
 {
 	char			*tmp;
 	void			*img;
-	int				ix;
-	int				iy;
 	int				i;
 
 	i = 0;
@@ -65,9 +63,7 @@ void				wolf_value(t_wolf *w, int off_x, int off_y, int value)
 		(tmp[i] - 48 == 7) ? img = IMG_GUI_N7 : (0);
 		(tmp[i] - 48 == 8) ? img = IMG_GUI_N8 : (0);
 		(tmp[i] - 48 == 9) ? img = IMG_GUI_N9 : (0);
-		img = mlx_xpm_file_to_image(w->mlx.mlx, img, &ix, &iy);
-		mlx_put_image_to_window(w->mlx.mlx, w->mlx.win, img, off_x, off_y);
-		mlx_destroy_image(w->mlx.mlx, img);
+		wolf_mlx_image(w, img, off_x, off_y);
 		off_x += 40;
 		i++;
 	}
@@ -100,12 +96,24 @@ void				wolf_heroin(t_wolf *w)
 
 void				wolf_head(t_wolf *w)
 {
-	if (w->e.gui_head == 'l')
-		wolf_mlx_image(w, IMG_HEAD_L, MLX_CENTER, MLX_RIGHT);
-	if (w->e.gui_head == 'm')
-		wolf_mlx_image(w, IMG_HEAD_M, MLX_CENTER, MLX_RIGHT);
-	if (w->e.gui_head == 'r')
-		wolf_mlx_image(w, IMG_HEAD_R, MLX_CENTER, MLX_RIGHT);
+	if (w->p.junkie)
+	{
+		if (w->e.gui_head == 'l')
+			wolf_mlx_image(w, IMG_HEAD_LH, MLX_CENTER, MLX_RIGHT);
+		if (w->e.gui_head == 'm')
+			wolf_mlx_image(w, IMG_HEAD_MH, MLX_CENTER, MLX_RIGHT);
+		if (w->e.gui_head == 'r')
+			wolf_mlx_image(w, IMG_HEAD_RH, MLX_CENTER, MLX_RIGHT);
+	}
+	else
+	{
+		if (w->e.gui_head == 'l')
+			wolf_mlx_image(w, IMG_HEAD_L, MLX_CENTER, MLX_RIGHT);
+		if (w->e.gui_head == 'm')
+			wolf_mlx_image(w, IMG_HEAD_M, MLX_CENTER, MLX_RIGHT);
+		if (w->e.gui_head == 'r')
+			wolf_mlx_image(w, IMG_HEAD_R, MLX_CENTER, MLX_RIGHT);
+	}
 }
 
 /*
