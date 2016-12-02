@@ -1,7 +1,10 @@
-#Wolf3D
+#~~Wolf3D~~ Dora3D
 OSX Status: ![OSX Status](https://travis-ci.com/m600x/wolf3d.svg?token=NqkvpdueTsHVQsHR9xAp)
 
-Wolf3D is a graphical project that aim to teach us the Raycasting method by reproducing a barebone version of Wolf3D (just the rendering part). The project use mlx but it wasn't mandatory as long as the library used (like SDL) is only limited to the same function as the one present in mlx. To avoid temptation, I just stick to mlx.
+~~Wolf3D~~ Dora3D is a graphical project that aim to teach us the Raycasting method by reproducing a barebone version of ~~Wolf3D~~ Dora3D (just the rendering part). The project use mlx but it wasn't mandatory as long as the library used (like SDL) is only limited to the same function as the one present in mlx. To avoid temptation, I just stick to mlx.
+
+**Synopsis:** Dora have lot of trouble catching Chipeur and she's stuck in a Labyrinth finding him. Luckily for her, she's a junkie and Chipeur dropped a few heroin shot on his escape that will help her run much faster to catch him.
+But be aware Dora, drug is wrong... M'kay?... You might have trouble seing clearly...
 
 <p align="center"><img src=http://reho.st/self/1b402d0710f99beb67008432fb3419f9b58c861a.png></p>
 
