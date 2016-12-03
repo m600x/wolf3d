@@ -6,33 +6,11 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:41:21 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 09:01:59 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 12:00:24 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
-
-/*
-** HOOKER : Update the value concerning Dora.
-*/
-
-static int			wolf_hero_stat(t_wolf *w, int key, int rt)
-{
-	if (key == TEXTURED && (rt = 1))
-		w->e.textured = w->e.textured ? 0 : 1;
-	if (w->p.high == 0 && (rt = 1))
-		w->p.junkie = 0;
-	if (w->p.junkie && (rt = 1))
-		w->p.high--;
-	if (key == K_SPACE && w->p.heroin > 0 && w->p.junkie == 0 && (rt = 1))
-	{
-		w->p.heroin--;
-		w->p.junkie = 1;
-		w->p.high = WOLF_HIGH_T * 4;
-		w->p.spd = WOLF_SPD * WOLF_HIGH_F;
-	}
-	return (rt);
-}
 
 /*
 ** HOOKER : Calculate movements for the strafe and forward/backward. It's also
@@ -127,7 +105,7 @@ int					wolf_key(int key, t_wolf *w)
 	(key == MV_FW || key == MV_BW) ? render = wolf_move(w, key) : (0);
 	(key == MV_SL || key == MV_SR) ? render = wolf_move(w, key) : (0);
 	(key == MV_RL || key == MV_RR) ? render = wolf_rotation(w, key) : (0);
-	render = wolf_hero_stat(w, key, render);
+	render = wolf_player_status(w, key, render);
 	if (render)
 		wolf_engine(w);
 	return (0);

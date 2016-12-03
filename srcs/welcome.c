@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 19:46:42 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 11:05:44 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:31:14 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,15 @@ static int		wolf_welcome_hook(int key, t_wolf *w)
 		wolf_mlx_image(w, IMG_WELCOME_N, MLX_LEFT, MLX_RIGHT);
 	if ((key == K_DOWN || key == MV_BW) && w->level != 2 && (w->level = 2))
 		wolf_mlx_image(w, IMG_WELCOME_Q, MLX_LEFT, MLX_RIGHT);
-	if (key == K_ENTER && w->level == 1)
-		return (wolf_loop(w));
 	if (key == K_ENTER && (w->level == 2))
 		wolf_exit(w);
+	if (key == K_ENTER && w->level == 1)
+	{
+		w->e.stime = time(0);
+		w->e.offtime = w->e.stime;
+		system(AUD_OFF);
+		return (wolf_loop(w));
+	}
 	return (0);
 }
 

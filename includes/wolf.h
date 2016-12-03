@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 18:56:21 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 10:49:00 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 12:00:19 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@
 # define WIN_Y			720
 # define WIN_CX			WIN_X / 2
 # define WIN_CY			WIN_Y / 2
-# define DEF_MAP		XPM_MAP_1
 # define WOLF_ROT		0.1
 # define WOLF_SPD		0.2
 # define WOLF_WCN		0xf10714
@@ -97,6 +96,7 @@ void					wolf_welcome(t_wolf *w);
 int						wolf_loop(t_wolf *w);
 int						wolf_key(int key, t_wolf *w);
 void					wolf_items_pick(t_wolf *w);
+int						wolf_player_status(t_wolf *w, int key, int rt);
 void					wolf_sound(t_wolf *w);
 void					wolf_leveling(t_wolf *w);
 void					wolf_engine(t_wolf *w);

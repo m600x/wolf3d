@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 09:10:09 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 09:42:52 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:52:33 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,9 @@ int				main(int argc, char *argv[])
 
 	w.map_x = 0;
 	w.map_y = 0;
-	w.choice = DEF_MAP;
+//	w.choice = DEF_MAP;
+	w.debug = (argc == 2 && ft_strequ("debug", argv[1])) ? 1 : 0;
+	w.choice = (w.debug) ? MAP_DEB : MAP_1;
 	w.level = 1;
 	w.cheater = (argc == 2 && ft_strequ("cheater", argv[1])) ? 1 : 0;
 	w.mlx.mlx = mlx_init();

@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 14:37:22 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 11:07:25 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:56:15 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,15 @@ void				wolf_leveling(t_wolf *w)
 {
 	wolf_scoring(w);
 	w->level++;
-	w->level == 2 ? w->choice = XPM_MAP_2 : (0);
-	w->level == 3 ? w->choice = XPM_MAP_3 : (0);
-	w->level == 4 ? w->choice = XPM_MAP_4 : (0);
-	w->level == 5 ? w->choice = XPM_MAP_5 : (0);
+	if (w->debug)
+		w->choice = MAP_DEB;
+	else
+	{
+		w->level == 2 ? w->choice = MAP_2 : (0);
+		w->level == 3 ? w->choice = MAP_3 : (0);
+		w->level == 4 ? w->choice = MAP_4 : (0);
+		w->level == 5 ? w->choice = MAP_5 : (0);
+	}
 	if (w->level == 6)
 	{
 		ft_putstr("\nTotal score: ");

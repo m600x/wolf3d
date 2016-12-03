@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 10:23:57 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 11:24:36 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:47:58 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,7 @@ typedef struct			s_wolf
 	int					level;
 	int					cheater;
 	int					score;
+	int					debug;
 	t_var				v;
 	t_sprite			*s;
 	t_player			p;

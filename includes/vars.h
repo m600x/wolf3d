@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 13:28:55 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 09:25:19 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 12:18:52 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@
 **            - 4 exit.
 */
 
-# define XPM_MAP_1		"Resources/maps/m1.wolf"
-# define XPM_MAP_2		"Resources/maps/m2.wolf"
-# define XPM_MAP_3		"Resources/maps/m3.wolf"
-# define XPM_MAP_4		"Resources/maps/m4.wolf"
-# define XPM_MAP_5		"Resources/maps/m5.wolf"
+# define MAP_DEB		"Resources/maps/debug.wolf"
+# define MAP_1			"Resources/maps/m1.wolf"
+# define MAP_2			"Resources/maps/m2.wolf"
+# define MAP_3			"Resources/maps/m3.wolf"
+# define MAP_4			"Resources/maps/m4.wolf"
+# define MAP_5			"Resources/maps/m5.wolf"
 
 /*
 ** IMAGES
@@ -89,8 +90,9 @@
 # define AUD_FS1		"afplay Resources/audio/fs1.wav &>/dev/null &"
 # define AUD_FS2		"afplay Resources/audio/fs2.wav &>/dev/null &"
 # define AUD_HERPICK	"afplay Resources/audio/her_pick.wav &>/dev/null &"
-# define AUD_HERIN		"afplay Resources/audio/her_pick.wav &>/dev/null &"
-# define AUD_LEVEL		"afplay Resources/audio/her_pick.wav &>/dev/null &"
+# define AUD_HERFPICK	"afplay Resources/audio/her_f_pick.wav &>/dev/null &"
+# define AUD_HERUSE		"afplay Resources/audio/her_use.wav &>/dev/null &"
+# define AUD_LEVEL		"afplay Resources/audio/tp.wav &>/dev/null &"
 # define AUD_OFF		"killall afplay &>/dev/null"
 
 #endif
