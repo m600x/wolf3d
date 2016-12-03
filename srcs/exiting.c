@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 08:45:14 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 11:06:28 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 15:19:01 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void			wolf_free_map(t_wolf *w)
 ** EXIT.
 */
 
-int				wolf_exit(t_wolf *w)
+int					wolf_exit(t_wolf *w)
 {
 	(w->map) ? wolf_free_map(w) : (0);
 	(w->s) ? wolf_free_sprite(w) : (0);
