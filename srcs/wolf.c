@@ -6,22 +6,11 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 09:10:09 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 20:03:10 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 09:42:52 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
-
-/*
-** EXIT.
-*/
-
-int				wolf_exit(t_wolf *w)
-{
-	w = NULL;
-	system(AUD_OFF);
-	exit(EXIT_SUCCESS);
-}
 
 /*
 ** Error handling. Will print the error and exit the program.
@@ -46,6 +35,7 @@ static int		wolf_time(t_wolf *w)
 	if (ttime - w->e.stime > 0)
 	{
 		w->e.stime = ttime;
+		wolf_mlx_image(w, IMG_GUI_TIME, 740, 590);
 		wolf_value(w, 880, 655, (w->e.stime - w->e.offtime));
 	}
 	return (0);
@@ -73,12 +63,11 @@ int				main(int argc, char *argv[])
 {
 	t_wolf		w;
 
-	(void)argc;
-	(void)argv;
 	w.map_x = 0;
 	w.map_y = 0;
 	w.choice = DEF_MAP;
 	w.level = 1;
+	w.cheater = (argc == 2 && ft_strequ("cheater", argv[1])) ? 1 : 0;
 	w.mlx.mlx = mlx_init();
 	wolf_parser(&w);
 	wolf_init(&w, 1);

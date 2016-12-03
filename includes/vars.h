@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 13:28:55 by alao              #+#    #+#             */
-/*   Updated: 2016/12/02 14:25:42 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 09:25:19 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,31 +38,26 @@
 # define IMG_SPR_Y		256
 # define SPRITE_TP		"Resources/images/sprites/teleporter.xpm"
 # define SPRITE_HEROIN	"Resources/images/sprites/heroin.xpm"
-
 # define LV1_SKY		"Resources/images/level/1_sky.xpm"
 # define LV1_WALL		"Resources/images/level/1_wall.xpm"
 # define LV1_GND		"Resources/images/level/1_gnd.xpm"
-
 # define LV2_SKY		"Resources/images/level/2_sky.xpm"
 # define LV2_WALL		"Resources/images/level/2_wall.xpm"
 # define LV2_GND		"Resources/images/level/2_gnd.xpm"
-
 # define LV3_SKY		"Resources/images/level/3_sky.xpm"
 # define LV3_WALL		"Resources/images/level/3_wall.xpm"
 # define LV3_GND		"Resources/images/level/3_gnd.xpm"
-
 # define LV4_SKY		"Resources/images/level/4_sky.xpm"
 # define LV4_WALL		"Resources/images/level/4_wall.xpm"
 # define LV4_GND		"Resources/images/level/4_gnd.xpm"
-
 # define LV5_WALL		"Resources/images/level/2_wall.xpm"
 # define LV5_SKY		"Resources/images/level/3_sky.xpm"
 # define LV5_GND		"Resources/images/level/4_gnd.xpm"
-
 # define IMG_WELCOME	"Resources/images/gui/welcome.xpm"
 # define IMG_WELCOME_N	"Resources/images/gui/welcome_new.xpm"
 # define IMG_WELCOME_Q	"Resources/images/gui/welcome_quit.xpm"
 # define IMG_GUI_FOOT	"Resources/images/gui/footer.xpm"
+# define IMG_GUI_TIME	"Resources/images/gui/time_blank.xpm"
 # define IMG_GUI_N0		"Resources/images/gui/numbers/0.xpm"
 # define IMG_GUI_N1		"Resources/images/gui/numbers/1.xpm"
 # define IMG_GUI_N2		"Resources/images/gui/numbers/2.xpm"

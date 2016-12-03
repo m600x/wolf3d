@@ -6,11 +6,28 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 14:37:22 by alao              #+#    #+#             */
-/*   Updated: 2016/12/02 14:13:03 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:07:25 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
+
+static void			wolf_scoring(t_wolf *w)
+{
+	int				lv_score;
+
+	lv_score = WOLF_DFL_SCR;
+	lv_score -= w->p.step * 10;
+	lv_score -= (w->e.stime - w->e.offtime) * 10;
+	w->score += lv_score;
+	ft_putstr("\nScore of the level ");
+	ft_putnbr(w->level);
+	ft_putstr(" : ");
+	ft_putnbr(lv_score);
+	ft_putstr(" / ");
+	ft_putnbr(WOLF_DFL_SCR);
+	ft_putstr(" points.");
+}
 
 /*
 ** LEVEL : Reload textures.
@@ -70,12 +87,19 @@ static void			wolf_free_map(t_wolf *w)
 
 void				wolf_leveling(t_wolf *w)
 {
+	wolf_scoring(w);
 	w->level++;
 	w->level == 2 ? w->choice = XPM_MAP_2 : (0);
 	w->level == 3 ? w->choice = XPM_MAP_3 : (0);
 	w->level == 4 ? w->choice = XPM_MAP_4 : (0);
 	w->level == 5 ? w->choice = XPM_MAP_5 : (0);
-	w->level == 6 ? wolf_exit(w) : (0);
+	if (w->level == 6)
+	{
+		ft_putstr("\nTotal score: ");
+		ft_putnbr(w->score);
+		ft_putstr(" points.");
+		wolf_exit(w);
+	}
 	wolf_free_map(w);
 	wolf_parser(w);
 	wolf_init(w, 0);

@@ -6,11 +6,55 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 12:06:05 by alao              #+#    #+#             */
-/*   Updated: 2016/12/02 12:18:33 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:24:30 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
+
+static int		wolf_sprite_behind_wall(t_wolf *w)
+{
+	while (42)
+	{
+		if (w->v.slen_x < w->v.slen_y)
+		{
+			w->v.slen_x += w->v.dlen_x;
+			w->v.cmap_x += w->v.step_x;
+		}
+		else
+		{
+			w->v.slen_y += w->v.dlen_y;
+			w->v.cmap_y += w->v.step_y;
+		}
+		if (w->map[w->v.cmap_y][w->v.cmap_x].wall > 1)
+			return (1);
+		if (w->map[w->v.cmap_y][w->v.cmap_x].wall == 1)
+			return (0);
+	}
+	return (-1);
+}
+
+int				wolf_sprite_checker(t_wolf *w, int x)
+{
+	w->v.cam_x = 2 * x / (double)WIN_X - 1;
+	w->v.rdir_x = w->p.dir_x + w->p.pln_x * w->v.cam_x;
+	w->v.rdir_y = w->p.dir_y + w->p.pln_y * w->v.cam_x;
+	w->v.cmap_x = (int)w->p.pos_x;
+	w->v.cmap_y = (int)w->p.pos_y;
+	w->v.dlen_x = sqrt(1 + pow(w->v.rdir_y, 2) / pow(w->v.rdir_x, 2));
+	w->v.dlen_y = sqrt(1 + pow(w->v.rdir_x, 2) / pow(w->v.rdir_y, 2));
+	w->v.step_x = 1;
+	w->v.step_y = 1;
+	if (w->v.rdir_x < 0 && (w->v.step_x = -1))
+		w->v.slen_x = (w->p.pos_x - w->v.cmap_x) * w->v.dlen_x;
+	else
+		w->v.slen_x = (w->v.cmap_x + 1.0 - w->p.pos_x) * w->v.dlen_x;
+	if (w->v.rdir_y < 0 && (w->v.step_y = -1))
+		w->v.slen_y = (w->p.pos_y - w->v.cmap_y) * w->v.dlen_y;
+	else
+		w->v.slen_y = (w->v.cmap_y + 1.0 - w->p.pos_y) * w->v.dlen_y;
+	return (wolf_sprite_behind_wall(w));
+}
 
 /*
 ** SPRITE : Put the new sprite in the list.
@@ -24,11 +68,11 @@ static void		wolf_sprite_saver(t_wolf *w, t_sprite *nd)
 
 	tag = 1;
 	ptr = w->s;
-	while (ptr && tag != -1)
+	while (ptr && tag != -1 && tag != 0)
 	{
-		if ((int)ptr->x == (int)nd->x && (int)ptr->y == (int)nd->y)
+		if (ptr->x == nd->x && ptr->y == nd->y)
 			tag = -1;
-		if ((int)ptr->x != (int)nd->x && (int)ptr->y != (int)nd->y)
+		if (ptr->x != nd->x && ptr->y != nd->y)
 			(ptr->dist > nd->dist) ? tag = 0 : (0);
 		tmp = ptr;
 		ptr = ptr->next;

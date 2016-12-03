@@ -6,7 +6,7 @@
 #    By: alao <alao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 15:45:38 by alao              #+#    #+#              #
-#    Updated: 2016/12/01 19:47:21 by alao             ###   ########.fr        #
+#    Updated: 2016/12/03 08:45:33 by alao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ N_SRCS =	wolf.c				\
 			sprite_helper.c		\
 			onscreen.c			\
 			leveling.c			\
-			mlx_helper.c
+			mlx_helper.c		\
+			exiting.c
 
 X_LFT = -L$(P_LFT) -lft
 X_MLX = -L$(P_MLX) -lmlx -framework OpenGL -framework AppKit

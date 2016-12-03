@@ -6,11 +6,26 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 19:46:42 by alao              #+#    #+#             */
-/*   Updated: 2016/12/01 20:12:34 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:05:44 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
+
+/*
+** WELCOME : Synopsis on console output
+*/
+
+static void		wolf_synopsis(void)
+{
+	ft_putcolor_fd("\n\tSynopsis:\n\n", "\e[1;4;34m", 1);
+	ft_putstr("    Dora have lot of trouble catching Chipeur and she's stuck ");
+	ft_putstr("in a Labyrinth finding him. Luckily for her, she's a ");
+	ft_putstr("junkie and Chipeur dropped a few heroin shot on his escape ");
+	ft_putstr("that will help her run much faster to catch him.\n    But be ");
+	ft_putstr("aware Dora, drugs are bad... M'kay?...\n        You might ");
+	ft_putendl("have trouble seeing clearly...\n");
+}
 
 /*
 ** WELCOME : Hooker function for the welcome screen.
@@ -39,6 +54,7 @@ static int		wolf_welcome_hook(int key, t_wolf *w)
 
 void			wolf_welcome(t_wolf *w)
 {
+	wolf_synopsis();
 	wolf_mlx_image(w, IMG_WELCOME, MLX_LEFT, MLX_LEFT);
 	wolf_mlx_image(w, IMG_WELCOME_N, MLX_LEFT, MLX_RIGHT);
 	mlx_hook(w->mlx.win, 17, (1L << 17), &wolf_exit, w);

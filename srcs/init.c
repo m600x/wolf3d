@@ -6,17 +6,17 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 14:18:46 by alao              #+#    #+#             */
-/*   Updated: 2016/12/02 13:35:17 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 09:51:33 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
 /*
-** TEST PRINT
+** CHEATER : Print out the map on the console.
 */
 
-static void			test(t_wolf *w, int x, int y)
+static void			wolf_cheater(t_wolf *w, int x, int y)
 {
 	while (y < w->map_y)
 	{
@@ -119,9 +119,10 @@ void				wolf_init(t_wolf *w, int first)
 	{
 		w->level = 1;
 		w->p.heroin = 0;
+		w->score = 0;
 		wolf_textures(w, 0, 0);
 	}
 	init_variable(w);
 	init_player(w, 0, 0, 1);
-	test(w, 0, 0);
+	(w->cheater) ? wolf_cheater(w, 0, 0) : (0);
 }

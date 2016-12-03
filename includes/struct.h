@@ -6,12 +6,16 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 10:23:57 by alao              #+#    #+#             */
-/*   Updated: 2016/12/02 14:06:37 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:24:36 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
+
+/*
+** Sprite list.
+*/
 
 typedef struct			s_sprite
 {
@@ -23,11 +27,19 @@ typedef struct			s_sprite
 	int					scaled;
 }						t_sprite;
 
+/*
+** Map node.
+*/
+
 typedef struct			s_pxl
 {
 	int					wall;
 	int					color;
 }						t_pxl;
+
+/*
+** MLX set of pointer.
+*/
 
 typedef struct			s_mlx
 {
@@ -45,6 +57,10 @@ typedef struct			s_mlx
 	int					len;
 }						t_mlx;
 
+/*
+** Player variables.
+*/
+
 typedef struct			s_player
 {
 	double				pos_x;
@@ -61,6 +77,10 @@ typedef struct			s_player
 	double				distance;
 	int					step;
 }						t_player;
+
+/*
+** Raycasting variables.
+*/
 
 typedef struct			s_var
 {
@@ -97,6 +117,10 @@ typedef struct			s_var
 	int					sp_yend;
 }						t_var;
 
+/*
+** Environnements variables.
+*/
+
 typedef struct			s_emb
 {
 	int					stime;
@@ -107,6 +131,10 @@ typedef struct			s_emb
 	int					aud_fst;
 }						t_emb;
 
+/*
+** Wolf3D variables.
+*/
+
 typedef struct			s_wolf
 {
 	t_mlx				mlx;
@@ -115,6 +143,8 @@ typedef struct			s_wolf
 	int					map_x;
 	int					map_y;
 	int					level;
+	int					cheater;
+	int					score;
 	t_var				v;
 	t_sprite			*s;
 	t_player			p;

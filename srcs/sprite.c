@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 12:06:05 by alao              #+#    #+#             */
-/*   Updated: 2016/12/02 14:21:25 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/03 11:09:16 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,17 @@ static void		wolf_sprite_renderer(t_wolf *w, int x, int y, t_sprite *s)
 	while (x < w->v.sp_xend)
 	{
 		sp_texx = (int)(256 * (x - w->v.sp_fact) * IMG_SPR_X / w->v.sp_x) / 256;
-		y = w->v.sp_ystart;
-		while (y < w->v.sp_yend)
+		if (wolf_sprite_checker(w, x) && (y = w->v.sp_ystart))
 		{
-			tmp = (s->scaled) ? (y - (int)(256 / w->v.sp_transy)) : y;
-			tmp = tmp * IMG_SPR_Y - WIN_Y * 128 + w->v.sp_y * 128;
-			sp_texy = ((tmp * IMG_SPR_Y) / w->v.sp_y) / 256;
-			clr = wolf_mlx_get_color(w, sprite, sp_texx, sp_texy);
-			clr != 0 ? wolf_mlx_pixel(w, x, y, clr) : (0);
-			y++;
+			while (y < w->v.sp_yend)
+			{
+				tmp = (s->scaled) ? (y - (int)(256 / w->v.sp_transy)) : y;
+				tmp = tmp * IMG_SPR_Y - WIN_Y * 128 + w->v.sp_y * 128;
+				sp_texy = ((tmp * IMG_SPR_Y) / w->v.sp_y) / 256;
+				clr = wolf_mlx_get_color(w, sprite, sp_texx, sp_texy);
+				clr != 0 ? wolf_mlx_pixel(w, x, y, clr) : (0);
+				y++;
+			}
 		}
 		x++;
 	}
@@ -77,8 +79,8 @@ static void		wolf_sprite_calculator(t_wolf *w, t_sprite *s)
 	w->v.sp_fact = WIN_CX * (1 + w->v.sp_transx / w->v.sp_transy);
 	w->v.sp_y = abs((int)(WIN_Y / w->v.sp_transy));
 	(s->scaled) ? w->v.sp_y /= SPR_SCALE : (0);
-	w->v.sp_ystart = -w->v.sp_y / 2 + WIN_CY;
-	(s->scaled) ? w->v.sp_ystart += (int)(256 / w->v.sp_transy) + 1 : (0);
+	w->v.sp_ystart = -w->v.sp_y / 2 + WIN_CY + 1;
+	(s->scaled) ? w->v.sp_ystart += (int)(256 / w->v.sp_transy) : (0);
 	(w->v.sp_ystart < 0) ? w->v.sp_ystart = 0 : (0);
 	w->v.sp_yend = w->v.sp_y / 2 + WIN_CY;
 	(s->scaled) ? w->v.sp_yend += (int)(256 / w->v.sp_transy) : (0);
