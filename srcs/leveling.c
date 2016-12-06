@@ -6,7 +6,7 @@
 /*   By: alao <alao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 14:37:22 by alao              #+#    #+#             */
-/*   Updated: 2016/12/03 11:56:15 by alao             ###   ########.fr       */
+/*   Updated: 2016/12/06 11:56:38 by alao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void			wolf_scoring(t_wolf *w)
 	ft_putnbr(lv_score);
 	ft_putstr(" / ");
 	ft_putnbr(WOLF_DFL_SCR);
-	ft_putstr(" points.");
+	ft_putstr(" points.\n");
 }
 
 /*
